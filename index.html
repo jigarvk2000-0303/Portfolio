@@ -1,167 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jigar Vakharia | Data Analyst</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-    body { background: #f9fafb; color: #111827; line-height: 1.6; }
-    header { background: #ffffff; padding: 70px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; }
-    header h1 { font-size: 2.6rem; margin-bottom: 10px; }
-    header p { color: #4b5563; font-size: 1.1rem; }
-    nav { position: sticky; top: 0; background: #ffffff; border-bottom: 1px solid #e5e7eb; }
-    nav ul { display: flex; justify-content: center; gap: 30px; list-style: none; padding: 15px; }
-    nav a { text-decoration: none; color: #111827; font-weight: 600; }
-    nav a:hover { color: #2563eb; }
-    section { max-width: 1000px; margin: auto; padding: 60px 20px; }
-    h2 { font-size: 2rem; margin-bottom: 25px; color: #2563eb; }
-    .summary { max-width: 850px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; }
-    .card h3 { margin-bottom: 10px; font-size: 1.2rem; }
-    .experience .card p { font-size: 0.95rem; color: #374151; }
-    ul { padding-left: 18px; }
-    li { margin-bottom: 8px; }
-    footer { text-align: center; padding: 30px; background: #ffffff; border-top: 1px solid #e5e7eb; color: #6b7280; }
-    .links a { display: inline-block; margin-right: 15px; margin-top: 10px; color: #2563eb; text-decoration: none; font-weight: 600; }
-    .links a:hover { text-decoration: underline; }
- .profile-img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 4px solid #e5e7eb;
-}
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomasz Gajda | Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --primary-blue: #2563eb;
+            --dark-bg: #000000;
+            --light-bg: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn-contact {
+            background: var(--dark-bg);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            height: 80vh;
+            align-items: center;
+        }
+
+        .hero-left {
+            flex: 1;
+            background-color: #e5e7eb;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+        }
+
+        .hero-right {
+            flex: 1;
+            background-color: var(--dark-bg);
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-left h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .hero-left h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .hero-left p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-blue);
+        }
+
+        .profile-img {
+            width: 80%;
+            filter: grayscale(0%); /* Change to 100% for the aesthetic in your image */
+        }
+
+        /* --- Global Section Styling --- */
+        section {
+            padding: 80px 10%;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        /* --- Content Specifics --- */
+        .summary-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .date {
+            display: block;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; height: auto; }
+            .hero-left { padding: 60px 5%; }
+            .hero-left h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <img src="profile.jpg" alt="Jigar Vakharia" class="profile-img" />
-  <h1>Jigar Vakharia</h1>
-  <p>Data Analyst | Power BI • SQL • Excel • Tableau</p>
-  <div class="links">
-    <a href="mailto:jigarvk2000@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/jigarvakharia0303" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/jigarvk2000-0303" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</header>
+    <nav>
+        <div class="logo">TG</div>
+        <ul class="nav-links">
+            <li><a href="#about">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#" class="btn-contact">Contact Me</a></li>
+        </ul>
+    </nav>
 
-<nav>
-  <ul>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-  </ul>
-</nav>
+    <header class="hero">
+        <div class="hero-left">
+            <h2>Hi, I am</h2>
+            <h1>Tomasz Gajda</h1>
+            <p>Data Analyst / Data Science Professional</p>
+            <div class="social-icons">
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="https://via.placeholder.com/500x600" alt="Tomasz Gajda" class="profile-img">
+        </div>
+    </header>
 
-<section id="summary">
-  <h2>Professional Summary</h2>
-  <p class="summary">
-    Focused on applying statistical analysis, data visualization, and business intelligence to generate actionable insights
-    and support strategic decision-making. Leveraging prior experience in business management to bring a results-oriented
-    perspective to analytical problem-solving.
-  </p>
-</section>
+    <section id="about">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="summary-box">
+            Focused on applying statistical analysis, data visualization, and business intelligence to generate actionable insights and support strategic decision-making. Leveraging prior experience in business management to bring a results-oriented perspective to analytical problem-solving.
+        </div>
+    </section>
 
-<section id="skills">
-  <h2>Core Skills</h2>
-  <div class="grid">
-    <div class="card">Excel (Advanced functions, Pivot Tables)</div>
-    <div class="card">Power BI (DAX, Interactive Dashboards)</div>
-    <div class="card">Tableau (Calculated Fields, Visual Analytics)</div>
-    <div class="card">SQL (Queries, Joins, Filtering)</div>
-    <div class="card">Power Query & ETL</div>
-    <div class="card">KPI & Business Reporting</div>
-  </div>
-</section>
+    <section id="skills">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="grid">
+            <div class="card"><h3>Excel</h3><p>Advanced functions, Pivot Tables</p></div>
+            <div class="card"><h3>Power BI</h3><p>DAX, Interactive Dashboards</p></div>
+            <div class="card"><h3>Tableau</h3><p>Calculated Fields, Visual Analytics</p></div>
+            <div class="card"><h3>SQL</h3><p>Queries, Joins, Filtering</p></div>
+            <div class="card"><h3>Power Query & ETL</h3><p>Data Cleaning & Transformation</p></div>
+            <div class="card"><h3>KPI & Reporting</h3><p>Business Performance Tracking</p></div>
+        </div>
+    </section>
 
-<section id="experience" class="experience">
-  <h2>Professional Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Care Health Insurance – Agency Manager (2025–2026)</h3>
-      <ul>
-        <li>Utilized performance dashboards to track KPIs and improve team outcomes.</li>
-        <li>Recruited, trained, and managed agency teams.</li>
-        <li>Set and monitored individual and team performance goals.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Max Life Insurance – Associate Agency Development Manager (2024)</h3>
-      <ul>
-        <li>Analyzed performance data to optimize operational decisions.</li>
-        <li>Developed and executed strategies to increase revenue.</li>
-        <li>Built strong client and agency partnerships.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section id="portfolio">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Uber Trip Analysis</h3>
+                <ul>
+                    <li>Identified demand trends using trip data.</li>
+                    <li>Built interactive Power BI dashboard.</li>
+                    <li>Cleaned data using Power Query.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Database Design</h3>
+                <ul>
+                    <li>Designed relational database for sales.</li>
+                    <li>Applied normalization and table relationships.</li>
+                    <li>Simulated real-world business operations.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>People & Workforce</h3>
+                <ul>
+                    <li>Created Tableau dashboard for insights.</li>
+                    <li>Analyzed attrition by department.</li>
+                    <li>Provided executive-level visibility.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Swiggy Analytics</h3>
+                <ul>
+                    <li>Excel dashboard tracking sales and AOV.</li>
+                    <li>Analyzed city and state performance.</li>
+                    <li>Enabled drill-down analysis.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Uber Trip Analysis</h3>
-      <ul>
-        <li>Identified demand trends using trip data.</li>
-        <li>Built an interactive Power BI dashboard.</li>
-        <li>Cleaned and transformed data using Power Query.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Database Design & Data Exploration</h3>
-      <ul>
-        <li>Designed a relational database for sales and inventory.</li>
-        <li>Applied normalization and table relationships.</li>
-        <li>Simulated real-world business operations.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>People & Workforce Analytics</h3>
-      <ul>
-        <li>Created a Tableau dashboard for workforce insights.</li>
-        <li>Analyzed attrition by department and age group.</li>
-        <li>Provided executive-level visibility.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Swiggy Analytics Overview</h3>
-      <ul>
-        <li>Built an Excel dashboard tracking sales and AOV.</li>
-        <li>Analyzed city and state-level performance.</li>
-        <li>Enabled drill-down analysis using filters.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Care Health Insurance</h3>
+                <span class="date">Agency Manager (2025–2026)</span>
+                <ul>
+                    <li>Utilized performance dashboards to track KPIs.</li>
+                    <li>Recruited and managed agency teams.</li>
+                    <li>Monitored individual performance goals.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Max Life Insurance</h3>
+                <span class="date">Associate Agency Manager (2024)</span>
+                <ul>
+                    <li>Analyzed performance data for decisions.</li>
+                    <li>Developed strategies to increase revenue.</li>
+                    <li>Built strong agency partnerships.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="education">
-  <h2>Education & Certifications</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>IT Vedant</h3>
-      <p>Data Science & Data Analysis (2025–2026)</p>
-    </div>
-    <div class="card">
-      <h3>University of Mumbai</h3>
-      <p>Bachelor of Commerce (2021)</p>
-    </div>
-    <div class="card">
-      <h3>Certifications</h3>
-      <p>SQL Intermediate – HackerRank</p>
-      <p>Excel, Power BI, SQL, Tableau – IT Vedant</p>
-    </div>
-  </div>
-</section>
+    <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>IT Vedant</h3>
+                <p>Data Science & Data Analysis (2025–2026)</p>
+            </div>
+            <div class="card">
+                <h3>University of Mumbai</h3>
+                <p>Bachelor of Commerce (2021)</p>
+            </div>
+            <div class="card">
+                <h3>Certifications</h3>
+                <p>SQL Intermediate – HackerRank</p>
+                <p>Excel, Power BI, SQL, Tableau – IT Vedant</p>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2026 Jigar Vakharia | Data Analyst Portfolio</p>
-</footer>
+    <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2026 Tomasz Gajda. All rights reserved.
+    </footer>
 
 </body>
 </html>
