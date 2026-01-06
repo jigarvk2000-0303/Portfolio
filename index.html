@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomasz Gajda | Data Analyst Portfolio</title>
+    <title>Jigar Vakharia | Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS Variables for easy color management */
+        /* CSS Variables for easy theme management */
         :root {
             --primary-blue: #2563eb;
-            --dark-bg: #000000;
-            --light-bg: #f3f4f6;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
+            --dark-text: #0f172a;
+            --light-bg: #f8fafc;
+            --section-bg: #f1f5f9;
+            --border-color: #e2e8f0;
+            --text-muted: #64748b;
             --white: #ffffff;
         }
 
@@ -20,12 +22,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
             background-color: var(--white);
-            color: var(--text-main);
+            color: var(--dark-text);
             line-height: 1.6;
         }
 
@@ -34,30 +36,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: var(--white);
+            padding: 1.2rem 8%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
-            font-weight: 800;
+            font-weight: 900;
             font-size: 1.5rem;
-            color: var(--dark-bg);
+            color: var(--primary-blue);
+            letter-spacing: -1px;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.9rem;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
@@ -66,281 +72,494 @@
         }
 
         .btn-contact {
-            background: var(--dark-bg);
+            background: var(--primary-blue);
             color: white !important;
-            padding: 10px 20px;
+            padding: 0.7rem 1.5rem;
             border-radius: 50px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        /* --- Hero Section --- */
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* --- Hero Section (Updated for your photo) --- */
         .hero {
             display: flex;
-            height: 80vh;
+            min-height: 85vh; /* Ensure enough height on large screens */
             align-items: center;
+            /* Seamless light grey background for the whole hero area */
+            background: linear-gradient(to right, #f8fafc 50%, #f1f5f9 50%);
         }
 
         .hero-left {
             flex: 1;
-            background-color: #e5e7eb;
-            height: 100%;
+            padding: 0 0 0 12%; /* More padding on the left */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: 10%;
         }
 
         .hero-right {
             flex: 1;
-            background-color: var(--dark-bg);
             height: 100%;
             display: flex;
-            align-items: flex-end;
+            align-items: center; /* Center vertically */
             justify-content: center;
-            overflow: hidden;
+            position: relative;
         }
 
         .hero-left h2 {
             font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Small decorative line before "Hi, I am" */
+        .hero-left h2::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin-right: 15px;
         }
 
         .hero-left h1 {
             font-size: 4rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 10px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .text-highlight {
+            color: var(--primary-blue);
         }
 
         .hero-left p {
+            font-size: 1.25rem;
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-weight: 500;
+            max-width: 500px;
         }
 
         .social-icons {
-            margin-top: 30px;
+            margin-top: 2.5rem;
             display: flex;
             gap: 20px;
         }
 
-        .social-icons a {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            transition: 0.3s;
+        .social-icon-box {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
-        .social-icons a:hover {
-            color: var(--primary-blue);
+        .social-icon-box:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        /* Styling specifically for your photo to make it pop */
+        .profile-img-container {
+            position: relative;
+            width: 80%; /* Adjust size of image container */
+            max-width: 450px;
+            z-index: 2;
         }
 
         .profile-img {
-            width: 80%;
-            filter: grayscale(0%); /* Change to 100% for the aesthetic in your image */
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 24px; /* Rounded corners */
+            /* A nice soft shadow to lift it off the background */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 8px solid var(--white); /* White border frame */
         }
 
-        /* --- Global Section Styling --- */
+
+        /* --- General Section Styling --- */
         section {
-            padding: 80px 10%;
+            padding: 100px 8%;
         }
 
-        h2.section-title {
-            font-size: 2.5rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
             color: var(--primary-blue);
-            margin-bottom: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark-text);
+            font-weight: 800;
+        }
+
+        /* --- Summary Section --- */
+        .summary-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- Grid & Cards --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 2rem;
         }
 
         .card {
             background: var(--white);
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateY(-7px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        /* Subtle blue top border on hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-blue);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
         }
 
         .card h3 {
-            margin-bottom: 15px;
-            color: var(--text-main);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+            font-weight: 700;
         }
 
-        /* --- Content Specifics --- */
-        .summary-box {
-            background: var(--light-bg);
-            padding: 30px;
-            border-radius: 12px;
+        .card p, .card li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* Custom bullet points */
+        .card li::before {
+            content: "\f058"; /* FontAwesome check-circle */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-blue);
+            margin-right: 10px;
             font-size: 1.1rem;
-            color: var(--text-muted);
+            margin-top: 2px;
         }
 
-        ul {
-            list-style-position: inside;
-            color: var(--text-muted);
-            margin-top: 10px;
+        .role-tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        li {
-            margin-bottom: 8px;
+        /* --- Footer --- */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 4rem 2rem;
         }
 
-        .date {
-            display: block;
-            font-weight: bold;
-            color: var(--text-main);
-            margin-bottom: 10px;
+        footer p {
+            margin-top: 1rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; height: auto; }
-            .hero-left { padding: 60px 5%; }
-            .hero-left h1 { font-size: 3rem; }
-            .nav-links { display: none; }
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .hero-left h1 { font-size: 3.5rem; }
+            section { padding: 80px 5%; }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse; /* Stack, putting image on top */
+                height: auto;
+                padding-top: 40px;
+                padding-bottom: 60px;
+                background: var(--section-bg); /* Solid color on mobile */
+            }
+            .hero-left {
+                padding: 40px 5% 0 5%;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-right {
+                width: 100%;
+                height: auto;
+            }
+            .profile-img-container { width: 60%; max-width: 300px; }
+            .hero-left h2::before { display: none; } /* Hide the line on mobile */
+            .nav-links { display: none; /* Hide menu on small screens for now */ }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TG</div>
+        <div class="logo">JV.</div>
         <ul class="nav-links">
-            <li><a href="#about">About me</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#" class="btn-contact">Contact Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
         </ul>
+        <a href="#" class="btn-contact">Contact Me</a>
     </nav>
 
     <header class="hero">
         <div class="hero-left">
             <h2>Hi, I am</h2>
-            <h1>Tomasz Gajda</h1>
-            <p>Data Analyst / Data Science Professional</p>
+            <h1>Jigar <span class="text-highlight">Vakharia</span></h1>
+            <p>Data Analyst specializing in transforming raw data into actionable business strategies.</p>
             <div class="social-icons">
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your@email.com" class="social-icon-box"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/" target="_blank" class="social-icon-box"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank" class="social-icon-box"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="hero-right">
-            <img src="https://via.placeholder.com/500x600" alt="Tomasz Gajda" class="profile-img">
+            <div class="profile-img-container">
+                <img src="jigar.png" alt="Jigar Vakharia - Data Analyst" class="profile-img">
+            </div>
         </div>
     </header>
 
     <section id="about">
-        <h2 class="section-title">Professional Summary</h2>
+        <div class="section-header">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Professional Summary</h2>
+        </div>
         <div class="summary-box">
             Focused on applying statistical analysis, data visualization, and business intelligence to generate actionable insights and support strategic decision-making. Leveraging prior experience in business management to bring a results-oriented perspective to analytical problem-solving.
         </div>
     </section>
 
-    <section id="skills">
-        <h2 class="section-title">Core Skills</h2>
+    <section id="skills" style="background-color: var(--section-bg);">
+        <div class="section-header">
+            <span class="section-tag">My Expertise</span>
+            <h2 class="section-title">Core Skills</h2>
+        </div>
         <div class="grid">
-            <div class="card"><h3>Excel</h3><p>Advanced functions, Pivot Tables</p></div>
-            <div class="card"><h3>Power BI</h3><p>DAX, Interactive Dashboards</p></div>
-            <div class="card"><h3>Tableau</h3><p>Calculated Fields, Visual Analytics</p></div>
-            <div class="card"><h3>SQL</h3><p>Queries, Joins, Filtering</p></div>
-            <div class="card"><h3>Power Query & ETL</h3><p>Data Cleaning & Transformation</p></div>
-            <div class="card"><h3>KPI & Reporting</h3><p>Business Performance Tracking</p></div>
+            <div class="card">
+                <i class="fas fa-table skill-icon"></i>
+                <h3>Excel Analysis</h3>
+                <p>Advanced functions, Pivot Tables, and complex data modeling for in-depth analysis.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-pie skill-icon"></i>
+                <h3>Power BI</h3>
+                <p>Creating DAX measures and interactive dashboards connected to various data sources.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line skill-icon"></i>
+                <h3>Tableau</h3>
+                <p>Designing intuitive visualizations, calculated fields, and data storytelling dashboards.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-database skill-icon"></i>
+                <h3>SQL & Databases</h3>
+                <p>Writing complex queries, joins, and performing data extraction and filtering.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-filter skill-icon"></i>
+                <h3>Power Query & ETL</h3>
+                <p>Automating data cleaning, transformation, and loading processes for efficiency.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullseye skill-icon"></i>
+                <h3>KPI Reporting</h3>
+                <p>Defining business metrics and tracking performance for executive-level visibility.</p>
+            </div>
         </div>
     </section>
 
-    <section id="portfolio">
-        <h2 class="section-title">Projects</h2>
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
         <div class="grid">
             <div class="card">
                 <h3>Uber Trip Analysis</h3>
+                <p style="margin-bottom: 1rem;">Leveraged trip data to identify key demand trends and operational patterns.</p>
                 <ul>
-                    <li>Identified demand trends using trip data.</li>
-                    <li>Built interactive Power BI dashboard.</li>
-                    <li>Cleaned data using Power Query.</li>
+                    <li>Built an interactive Power BI dashboard for trend visualization.</li>
+                    <li>Cleaned and transformed raw trip data using Power Query.</li>
+                    <li>Identified peak demand times and locations.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Database Design</h3>
+                <h3>Relational Database Design</h3>
+                <p style="margin-bottom: 1rem;">Designed a robust database schema for a sales and inventory system.</p>
                 <ul>
-                    <li>Designed relational database for sales.</li>
-                    <li>Applied normalization and table relationships.</li>
-                    <li>Simulated real-world business operations.</li>
+                    <li>Applied normalization techniques to reduce redundancy.</li>
+                    <li>Defined complex table relationships and constraints.</li>
+                    <li>Simulated real-world business operations via SQL queries.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>People & Workforce</h3>
+                <h3>Workforce & People Analytics</h3>
+                <p style="margin-bottom: 1rem;">Created a comprehensive view of HR data to understand employee retention.</p>
                 <ul>
-                    <li>Created Tableau dashboard for insights.</li>
-                    <li>Analyzed attrition by department.</li>
-                    <li>Provided executive-level visibility.</li>
+                    <li>Developed a Tableau dashboard for workforce insights.</li>
+                    <li>Analyzed attrition rates segmented by department and age.</li>
+                    <li>Provided executive-level visibility into staffing trends.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Swiggy Analytics</h3>
+                <h3>Swiggy Sales Overview</h3>
+                <p style="margin-bottom: 1rem;">A dynamic Excel-based analysis of food delivery performance metrics.</p>
                 <ul>
-                    <li>Excel dashboard tracking sales and AOV.</li>
-                    <li>Analyzed city and state performance.</li>
-                    <li>Enabled drill-down analysis.</li>
+                    <li>Built a dashboard tracking total sales and Average Order Value (AOV).</li>
+                    <li>Analyzed performance across different cities and states.</li>
+                    <li>Enabled interactive drill-down analysis using Slicers.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="grid">
+    <section id="experience" style="background-color: var(--section-bg);">
+        <div class="section-header">
+            <span class="section-tag">Career Path</span>
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="grid" style="max-width: 900px; margin: 0 auto;">
             <div class="card">
+                <span class="role-tag">2025 – 2026</span>
                 <h3>Care Health Insurance</h3>
-                <span class="date">Agency Manager (2025–2026)</span>
+                <p style="font-weight: 600; color: var(--primary-blue); margin-bottom: 1rem;">Agency Manager</p>
                 <ul>
-                    <li>Utilized performance dashboards to track KPIs.</li>
-                    <li>Recruited and managed agency teams.</li>
-                    <li>Monitored individual performance goals.</li>
+                    <li>Utilized performance dashboards to track KPIs and directly improve team outcomes.</li>
+                    <li>Recruited, trained, and managed high-performing agency teams.</li>
+                    <li>Set and monitored individual and team performance goals against targets.</li>
                 </ul>
             </div>
             <div class="card">
+                <span class="role-tag">2024</span>
                 <h3>Max Life Insurance</h3>
-                <span class="date">Associate Agency Manager (2024)</span>
+                <p style="font-weight: 600; color: var(--primary-blue); margin-bottom: 1rem;">Associate Agency Development Manager</p>
                 <ul>
-                    <li>Analyzed performance data for decisions.</li>
-                    <li>Developed strategies to increase revenue.</li>
-                    <li>Built strong agency partnerships.</li>
+                    <li>Analyzed performance data to optimize daily operational decisions.</li>
+                    <li>Developed and executed data-driven strategies to increase branch revenue.</li>
+                    <li>Built strong, lasting partnerships with clients and agencies.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h2 class="section-title">Education & Certifications</h2>
+        <div class="section-header">
+            <span class="section-tag">Learning</span>
+            <h2 class="section-title">Education & Certifications</h2>
+        </div>
         <div class="grid">
-            <div class="card">
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-graduation-cap skill-icon"></i>
                 <h3>IT Vedant</h3>
-                <p>Data Science & Data Analysis (2025–2026)</p>
+                <p style="font-weight: 700; color: var(--dark-text);">Data Science & Data Analysis</p>
+                <p>2025 – 2026</p>
             </div>
-            <div class="card">
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-university skill-icon"></i>
                 <h3>University of Mumbai</h3>
-                <p>Bachelor of Commerce (2021)</p>
+                <p style="font-weight: 700; color: var(--dark-text);">Bachelor of Commerce</p>
+                <p>2021</p>
             </div>
             <div class="card">
-                <h3>Certifications</h3>
-                <p>SQL Intermediate – HackerRank</p>
-                <p>Excel, Power BI, SQL, Tableau – IT Vedant</p>
+                <i class="fas fa-certificate skill-icon" style="display: block; text-align: center;"></i>
+                <h3 style="text-align: center;">Key Certifications</h3>
+                <ul style="margin-left: 1rem;">
+                    <li>SQL Intermediate (HackerRank)</li>
+                    <li>Excel, Power BI, SQL, Tableau (IT Vedant)</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem;">
-        &copy; 2026 Tomasz Gajda. All rights reserved.
+    <footer>
+        <div class="logo" style="color: white;">JV.</div>
+        <p>&copy; 2026 Jigar Vakharia. All rights reserved.</p>
+        <div class="social-icons" style="justify-content: center; margin-top: 20px;">
+            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
 
 </body>
