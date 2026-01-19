@@ -7,15 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS Variables for easy theme management */
+        /* CSS Variables for Dark Theme */
         :root {
-            --primary-blue: #2563eb;
-            --dark-text: #0f172a;
-            --light-bg: #f8fafc;
-            --section-bg: #f1f5f9;
-            --border-color: #e2e8f0;
-            --text-muted: #64748b;
-            --white: #ffffff;
+            --primary-blue: #3b82f6;
+            --main-bg: #0f172a;       /* Deep Dark Blue/Grey */
+            --card-bg: #1e293b;       /* Lighter Dark Blue for cards */
+            --section-alt: #020617;   /* Deeper black for section separation */
+            --text-main: #f8fafc;     /* Near white text */
+            --text-muted: #94a3b8;    /* Muted grey text */
+            --border-color: #334155;
         }
 
         * {
@@ -23,11 +23,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--white);
-            color: var(--dark-text);
+            background-color: var(--main-bg);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
@@ -37,7 +38,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 8%;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -61,7 +62,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-text);
+            color: var(--text-main);
             font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.3s;
@@ -77,27 +78,26 @@
             padding: 0.7rem 1.5rem;
             border-radius: 50px;
             font-weight: 700 !important;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn-contact:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
         }
 
-        /* --- Hero Section (Updated for your photo) --- */
+        /* --- Hero Section --- */
         .hero {
             display: flex;
-            min-height: 85vh; /* Ensure enough height on large screens */
+            min-height: 85vh;
             align-items: center;
-            /* Seamless light grey background for the whole hero area */
-            background: linear-gradient(to right, #f8fafc 50%, #f1f5f9 50%);
+            background: linear-gradient(135deg, var(--main-bg) 0%, var(--section-alt) 100%);
         }
 
         .hero-left {
             flex: 1;
-            padding: 0 0 0 12%; /* More padding on the left */
+            padding: 0 0 0 12%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -105,9 +105,8 @@
 
         .hero-right {
             flex: 1;
-            height: 100%;
             display: flex;
-            align-items: center; /* Center vertically */
+            align-items: center;
             justify-content: center;
             position: relative;
         }
@@ -121,7 +120,6 @@
             align-items: center;
         }
 
-        /* Small decorative line before "Hi, I am" */
         .hero-left h2::before {
             content: '';
             display: block;
@@ -136,7 +134,7 @@
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1rem;
-            color: var(--dark-text);
+            color: var(--text-main);
         }
 
         .text-highlight {
@@ -159,44 +157,36 @@
         .social-icon-box {
             width: 50px;
             height: 50px;
-            background: var(--white);
+            background: var(--card-bg);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-text);
+            color: var(--text-main);
             font-size: 1.2rem;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
 
         .social-icon-box:hover {
             background: var(--primary-blue);
-            color: var(--white);
+            color: white;
             transform: translateY(-5px);
-            border-color: var(--primary-blue);
         }
 
-        /* Styling specifically for your photo to make it pop */
         .profile-img-container {
-            position: relative;
-            width: 80%; /* Adjust size of image container */
-            max-width: 450px;
-            z-index: 2;
+            width: 80%;
+            max-width: 420px;
         }
 
         .profile-img {
             width: 100%;
             height: auto;
-            display: block;
-            border-radius: 24px; /* Rounded corners */
-            /* A nice soft shadow to lift it off the background */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            border: 8px solid var(--white); /* White border frame */
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 4px solid var(--card-bg);
         }
-
 
         /* --- General Section Styling --- */
         section {
@@ -220,13 +210,13 @@
 
         .section-title {
             font-size: 2.5rem;
-            color: var(--dark-text);
+            color: var(--text-main);
             font-weight: 800;
         }
 
-        /* --- Summary Section --- */
+        /* --- Cards & Grids --- */
         .summary-box {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 3rem;
             border-radius: 24px;
             font-size: 1.2rem;
@@ -234,11 +224,9 @@
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid var(--border-color);
         }
 
-        /* --- Grid & Cards --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -246,36 +234,17 @@
         }
 
         .card {
-            background: var(--white);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 2rem;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
-            border-color: rgba(37, 99, 235, 0.3);
-        }
-
-        /* Subtle blue top border on hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--primary-blue);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .card:hover::before {
-            opacity: 1;
+            border-color: var(--primary-blue);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
         }
 
         .skill-icon {
@@ -285,15 +254,12 @@
         }
 
         .card h3 {
-            font-size: 1.25rem;
             margin-bottom: 1rem;
-            color: var(--dark-text);
-            font-weight: 700;
+            color: var(--text-main);
         }
 
         .card p, .card li {
             color: var(--text-muted);
-            font-size: 0.95rem;
         }
 
         .card ul {
@@ -304,69 +270,71 @@
         .card li {
             margin-bottom: 0.8rem;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
         }
 
-        /* Custom bullet points */
         .card li::before {
-            content: "\f058"; /* FontAwesome check-circle */
+            content: "\f058";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             color: var(--primary-blue);
             margin-right: 10px;
-            font-size: 1.1rem;
-            margin-top: 2px;
         }
 
-        .role-tag {
-            display: inline-block;
-            background: #e0e7ff;
+        /* --- Contact Section --- */
+        #contact {
+            background-color: var(--section-alt);
+            text-align: center;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            background: var(--card-bg);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-blue);
+            background: #2563eb1a;
+        }
+
+        .contact-item i {
             color: var(--primary-blue);
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
         }
 
         /* --- Footer --- */
         footer {
-            background: var(--dark-text);
-            color: rgba(255,255,255,0.7);
+            background: var(--section-alt);
+            color: var(--text-muted);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
         }
 
-        footer p {
-            margin-top: 1rem;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 1024px) {
-            .hero-left h1 { font-size: 3.5rem; }
-            section { padding: 80px 5%; }
-        }
-
+        /* --- Responsive --- */
         @media (max-width: 900px) {
-            .hero {
-                flex-direction: column-reverse; /* Stack, putting image on top */
-                height: auto;
-                padding-top: 40px;
-                padding-bottom: 60px;
-                background: var(--section-bg); /* Solid color on mobile */
-            }
-            .hero-left {
-                padding: 40px 5% 0 5%;
-                align-items: center;
-                text-align: center;
-            }
-            .hero-right {
-                width: 100%;
-                height: auto;
-            }
-            .profile-img-container { width: 60%; max-width: 300px; }
-            .hero-left h2::before { display: none; } /* Hide the line on mobile */
-            .nav-links { display: none; /* Hide menu on small screens for now */ }
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
+            .hero-left { padding: 40px 5%; align-items: center; }
+            .hero-left h1 { font-size: 3rem; }
+            .profile-img-container { width: 70%; margin-bottom: 30px; }
+            .hero-left h2::before { display: none; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -378,9 +346,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#" class="btn-contact">Contact Me</a>
+        <a href="#contact" class="btn-contact">Contact Me</a>
     </nav>
 
     <header class="hero">
@@ -389,14 +357,14 @@
             <h1>Jigar <span class="text-highlight">Vakharia</span></h1>
             <p>Data Analyst specializing in transforming raw data into actionable business strategies.</p>
             <div class="social-icons">
-                <a href="mailto:your@email.com" class="social-icon-box"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:jigarvakharia03@gmail.com" class="social-icon-box"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/jigarvakharia0303" target="_blank" class="social-icon-box"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/" target="_blank" class="social-icon-box"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/" target="_blank" class="social-icon-box"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="hero-right">
             <div class="profile-img-container">
-                <img src="profile.jpg" alt="Jigar Vakharia - Data Analyst" class="profile-img">
+                <img src="profile.jpg" alt="Jigar Vakharia" class="profile-img">
             </div>
         </div>
     </header>
@@ -411,7 +379,7 @@
         </div>
     </section>
 
-    <section id="skills" style="background-color: var(--section-bg);">
+    <section id="skills" style="background-color: var(--section-alt);">
         <div class="section-header">
             <span class="section-tag">My Expertise</span>
             <h2 class="section-title">Core Skills</h2>
@@ -428,24 +396,9 @@
                 <p>Creating DAX measures and interactive dashboards connected to various data sources.</p>
             </div>
             <div class="card">
-                <i class="fas fa-chart-line skill-icon"></i>
-                <h3>Tableau</h3>
-                <p>Designing intuitive visualizations, calculated fields, and data storytelling dashboards.</p>
-            </div>
-            <div class="card">
                 <i class="fas fa-database skill-icon"></i>
                 <h3>SQL & Databases</h3>
                 <p>Writing complex queries, joins, and performing data extraction and filtering.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-filter skill-icon"></i>
-                <h3>Power Query & ETL</h3>
-                <p>Automating data cleaning, transformation, and loading processes for efficiency.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bullseye skill-icon"></i>
-                <h3>KPI Reporting</h3>
-                <p>Defining business metrics and tracking performance for executive-level visibility.</p>
             </div>
         </div>
     </section>
@@ -458,108 +411,42 @@
         <div class="grid">
             <div class="card">
                 <h3>Uber Trip Analysis</h3>
-                <p style="margin-bottom: 1rem;">Leveraged trip data to identify key demand trends and operational patterns.</p>
+                <p>Leveraged trip data to identify key demand trends and operational patterns.</p>
                 <ul>
-                    <li>Built an interactive Power BI dashboard for trend visualization.</li>
-                    <li>Cleaned and transformed raw trip data using Power Query.</li>
-                    <li>Identified peak demand times and locations.</li>
+                    <li>Power BI Dashboard for visualization.</li>
+                    <li>Cleaned data using Power Query.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Relational Database Design</h3>
-                <p style="margin-bottom: 1rem;">Designed a robust database schema for a sales and inventory system.</p>
+                <h3>Swiggy Overview</h3>
+                <p>Dynamic Excel-based analysis of food delivery performance metrics.</p>
                 <ul>
-                    <li>Applied normalization techniques to reduce redundancy.</li>
-                    <li>Defined complex table relationships and constraints.</li>
-                    <li>Simulated real-world business operations via SQL queries.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Workforce & People Analytics</h3>
-                <p style="margin-bottom: 1rem;">Created a comprehensive view of HR data to understand employee retention.</p>
-                <ul>
-                    <li>Developed a Tableau dashboard for workforce insights.</li>
-                    <li>Analyzed attrition rates segmented by department and age.</li>
-                    <li>Provided executive-level visibility into staffing trends.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Swiggy Sales Overview</h3>
-                <p style="margin-bottom: 1rem;">A dynamic Excel-based analysis of food delivery performance metrics.</p>
-                <ul>
-                    <li>Built a dashboard tracking total sales and Average Order Value (AOV).</li>
-                    <li>Analyzed performance across different cities and states.</li>
-                    <li>Enabled interactive drill-down analysis using Slicers.</li>
+                    <li>Sales and AOV tracking.</li>
+                    <li>Interactive drill-down using Slicers.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="experience" style="background-color: var(--section-bg);">
+    <section id="contact">
         <div class="section-header">
-            <span class="section-tag">Career Path</span>
-            <h2 class="section-title">Professional Experience</h2>
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Contact Me</h2>
         </div>
-        <div class="grid" style="max-width: 900px; margin: 0 auto;">
-            <div class="card">
-                <span class="role-tag">2025 – 2026</span>
-                <h3>Care Health Insurance</h3>
-                <p style="font-weight: 600; color: var(--primary-blue); margin-bottom: 1rem;">Agency Manager</p>
-                <ul>
-                    <li>Utilized performance dashboards to track KPIs and directly improve team outcomes.</li>
-                    <li>Recruited, trained, and managed high-performing agency teams.</li>
-                    <li>Set and monitored individual and team performance goals against targets.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <span class="role-tag">2024</span>
-                <h3>Max Life Insurance</h3>
-                <p style="font-weight: 600; color: var(--primary-blue); margin-bottom: 1rem;">Associate Agency Development Manager</p>
-                <ul>
-                    <li>Analyzed performance data to optimize daily operational decisions.</li>
-                    <li>Developed and executed data-driven strategies to increase branch revenue.</li>
-                    <li>Built strong, lasting partnerships with clients and agencies.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="section-header">
-            <span class="section-tag">Learning</span>
-            <h2 class="section-title">Education & Certifications</h2>
-        </div>
-        <div class="grid">
-            <div class="card" style="text-align: center;">
-                <i class="fas fa-graduation-cap skill-icon"></i>
-                <h3>IT Vedant</h3>
-                <p style="font-weight: 700; color: var(--dark-text);">Data Science & Data Analysis</p>
-                <p>2025 – 2026</p>
-            </div>
-            <div class="card" style="text-align: center;">
-                <i class="fas fa-university skill-icon"></i>
-                <h3>University of Mumbai</h3>
-                <p style="font-weight: 700; color: var(--dark-text);">Bachelor of Commerce</p>
-                <p>2021</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-certificate skill-icon" style="display: block; text-align: center;"></i>
-                <h3 style="text-align: center;">Key Certifications</h3>
-                <ul style="margin-left: 1rem;">
-                    <li>SQL Intermediate (HackerRank)</li>
-                    <li>Excel, Power BI, SQL, Tableau (IT Vedant)</li>
-                </ul>
-            </div>
+        <div class="contact-container">
+            <a href="tel:+918104605772" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+91 8104605772</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jigarvakharia0303" target="_blank" class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/jigarvakharia0303</span>
+            </a>
         </div>
     </section>
 
     <footer>
-        <div class="logo" style="color: white;">JV.</div>
-        <p>&copy; 2026 Jigar Vakharia. All rights reserved.</p>
-        <div class="social-icons" style="justify-content: center; margin-top: 20px;">
-            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-github"></i></a>
-        </div>
+        <p>&copy; 2026 Jigar Vakharia. Data Analyst Portfolio.</p>
     </footer>
 
 </body>
