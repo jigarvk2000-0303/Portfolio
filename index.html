@@ -158,4 +158,161 @@
 
         footer { text-align: center; padding: 40px; border-top: 1px solid var(--border-color); color: var(--text-muted); }
 
-        @media (max-width: 900px
+        @media (max-width: 900px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
+            .hero-left h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">JV.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+        </ul>
+        <a href="#contact" class="btn-contact">Contact Me</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-left">
+            <h2>Hi, I am</h2>
+            <h1>Jigar <span class="text-highlight">Vakharia</span></h1>
+            <p>Data Analyst specializing in transforming raw data into actionable business strategies.</p>
+            <div class="social-icons">
+                <a href="mailto:jigarvakharia03@gmail.com" class="social-icon-box"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/jigarvakharia0303" target="_blank" class="social-icon-box"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon-box"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="jigar.png" alt="Jigar Vakharia" class="profile-img">
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag">About</span>
+            <h2 class="section-title">Professional Summary</h2>
+        </div>
+        <div class="summary-box">
+            Focused on applying statistical analysis, data visualization, and business intelligence to generate actionable insights and support strategic decision-making. Leveraging prior experience in business management to bring a results-oriented perspective to analytical problem-solving.
+        </div>
+    </section>
+
+    <section id="skills" style="background-color: var(--section-alt);">
+        <div class="section-header">
+            <span class="section-tag">Expertise</span>
+            <h2 class="section-title">Core Skills</h2>
+        </div>
+        <div class="grid">
+            <div class="card"><i class="fas fa-table skill-icon"></i><h3>Excel</h3><p>Advanced functions, Pivot Tables, and Data Modeling.</p></div>
+            <div class="card"><i class="fas fa-chart-bar skill-icon"></i><h3>Power BI</h3><p>DAX, Interactive Dashboards, and Power Query.</p></div>
+            <div class="card"><i class="fas fa-chart-line skill-icon"></i><h3>Tableau</h3><p>Calculated Fields, Storytelling, and Visual Analytics.</p></div>
+            <div class="card"><i class="fas fa-database skill-icon"></i><h3>SQL</h3><p>Queries, Joins, Filtering, and Database Design.</p></div>
+            <div class="card"><i class="fas fa-broom skill-icon"></i><h3>ETL</h3><p>Data Cleaning & Transformation using Power Query.</p></div>
+            <div class="card"><i class="fas fa-bullseye skill-icon"></i><h3>KPI Reporting</h3><p>Performance tracking and Business Intelligence.</p></div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Detailed Projects</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Uber Trip Analysis</h3>
+                <ul>
+                    <li>Identified demand trends and operational patterns using trip data.</li>
+                    <li>Built an interactive Power BI dashboard for visualization.</li>
+                    <li>Cleaned and transformed raw trip data using Power Query.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Relational Database Design</h3>
+                <ul>
+                    <li>Designed a robust database schema for sales and inventory systems.</li>
+                    <li>Applied normalization techniques to reduce redundancy.</li>
+                    <li>Simulated real-world operations via complex SQL queries.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Workforce Analytics</h3>
+                <ul>
+                    <li>Created a Tableau dashboard for workforce and retention insights.</li>
+                    <li>Analyzed attrition rates by department, age, and tenure.</li>
+                    <li>Provided executive-level visibility into staffing trends.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Swiggy Sales Overview</h3>
+                <ul>
+                    <li>Built an Excel dashboard tracking Sales and Average Order Value (AOV).</li>
+                    <li>Analyzed performance across various cities and states.</li>
+                    <li>Enabled interactive drill-down analysis using Slicers.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background-color: var(--section-alt);">
+        <div class="section-header">
+            <span class="section-tag">History</span>
+            <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <span class="role-tag">2025 – 2026</span>
+                <h3>Care Health Insurance</h3>
+                <p><strong>Agency Manager</strong></p>
+                <ul>
+                    <li>Utilized performance dashboards to track KPIs.</li>
+                    <li>Recruited, trained, and managed agency teams.</li>
+                    <li>Monitored individual and team performance goals.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="role-tag">2024</span>
+                <h3>Max Life Insurance</h3>
+                <p><strong>Associate Agency Manager</strong></p>
+                <ul>
+                    <li>Analyzed performance data to optimize decisions.</li>
+                    <li>Developed strategies to increase branch revenue.</li>
+                    <li>Built strong agency partnerships and monitored growth.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag">Connect</span>
+            <h2 class="section-title">Contact Information</h2>
+        </div>
+        <div class="contact-container">
+            <a href="tel:+918104605772" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+91 8104605772</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jigarvakharia0303" target="_blank" class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/jigarvakharia0303</span>
+            </a>
+            <a href="mailto:jigarvakharia03@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>jigarvakharia03@gmail.com</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jigar Vakharia. Built for Data Insights.</p>
+    </footer>
+
+</body>
+</html>
